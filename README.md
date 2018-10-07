@@ -6,7 +6,7 @@ The code performs the following functions for document retrieval on the cranFiel
 1. Preprocesses the data in the text collection (stop words removal, stemming, removing punctuations etc.)
 2. Creates an inverted index for looking up relevant documents for each word in the vocabulary of the document collection
 3. Assigns weights to each word in the documents/queries by using TF-IDF weighting scheme
-4. Retrieves a list of relevant documents for the given list of queries specified in queries.txt 
+4. Retrieves a list of relevant documents for the given list of queries specified in queries.txt and ranks the retrieved documents in decreasing order of their cosine similarty with the query
 5. Calculates average precision and recall for the top (10/50/100/500) retrieved documents by using relevance.txt 
 
 ## Running the code  
@@ -23,59 +23,59 @@ Open the project in any preferred IDE of your choice and run the file Inverted_i
 
 ## Precision and Recall scores for queries
 ----------------------------------------------------------------
-Top 10 documents in rank list
-Query: 1 Pr: 0.0 Re:0.0
-Query: 2 Pr: 0.2 Re:0.13333333333333333
-Query: 3 Pr: 0.2 Re:0.13333333333333333
-Query: 4 Pr: 0.1 Re:0.05555555555555555
-Query: 5 Pr: 0.1 Re:0.05263157894736842
-Query: 6 Pr: 0.4 Re:0.2222222222222222
-Query: 7 Pr: 0.6 Re:0.6666666666666666
-Query: 8 Pr: 0.2 Re:0.5
-Query: 9 Pr: 0.1 Re:0.125
-Query: 10 Pr: 0.2 Re:0.08333333333333333
+#### Top 10 documents in rank list<br>
+Query: 1 &nbsp;&nbsp; Pr: 0.0 &nbsp;&nbsp; Re:0.0<br>
+Query: 2 &nbsp;&nbsp; Pr: 0.2 &nbsp;&nbsp; Re:0.13333333333333333<br>
+Query: 3 &nbsp;&nbsp; Pr: 0.2 &nbsp;&nbsp; Re:0.13333333333333333<br>
+Query: 4 &nbsp;&nbsp; Pr: 0.1 &nbsp;&nbsp; Re:0.05555555555555555<br>
+Query: 5 &nbsp;&nbsp; Pr: 0.1 &nbsp;&nbsp; Re:0.05263157894736842<br>
+Query: 6 &nbsp;&nbsp; Pr: 0.4 &nbsp;&nbsp; Re:0.2222222222222222<br>
+Query: 7 &nbsp;&nbsp; Pr: 0.6 &nbsp;&nbsp; Re:0.6666666666666666<br>
+Query: 8 &nbsp;&nbsp; Pr: 0.2 &nbsp;&nbsp; Re:0.5<br>
+Query: 9 &nbsp;&nbsp; Pr: 0.1 &nbsp;&nbsp; Re:0.125<br>
+Query: 10 &nbsp;&nbsp; Pr: 0.2 &nbsp;&nbsp; Re:0.08333333333333333<br>
 #### Avg precision: 0.21000000000000002
 #### Avg recall: 0.19720760233918128
 ----------------------------------------------------------------
-Top 50 documents in rank list
-Query: 1 Pr: 0.0 Re:0.0
-Query: 2 Pr: 0.12 Re:0.4
-Query: 3 Pr: 0.14 Re:0.4666666666666667
-Query: 4 Pr: 0.06 Re:0.16666666666666666
-Query: 5 Pr: 0.14 Re:0.3684210526315789
-Query: 6 Pr: 0.14 Re:0.3888888888888889
-Query: 7 Pr: 0.16 Re:0.8888888888888888
-Query: 8 Pr: 0.06 Re:0.75
-Query: 9 Pr: 0.12 Re:0.75
-Query: 10 Pr: 0.08 Re:0.16666666666666666
+#### Top 50 documents in rank list
+Query: 1 &nbsp;&nbsp; Pr: 0.0 &nbsp;&nbsp; Re:0.0<br> 
+Query: 2 &nbsp;&nbsp; Pr: 0.12 &nbsp;&nbsp; Re:0.4<br>
+Query: 3 &nbsp;&nbsp; Pr: 0.14 &nbsp;&nbsp; Re:0.4666666666666667<br> 
+Query: 4 &nbsp;&nbsp; Pr: 0.06 &nbsp;&nbsp; Re:0.16666666666666666<br>
+Query: 5 &nbsp;&nbsp; Pr: 0.14 &nbsp;&nbsp; Re:0.3684210526315789<br>
+Query: 6 &nbsp;&nbsp; Pr: 0.14 &nbsp;&nbsp; Re:0.3888888888888889<br>
+Query: 7 &nbsp;&nbsp; Pr: 0.16 &nbsp;&nbsp; Re:0.8888888888888888<br>
+Query: 8 &nbsp;&nbsp; Pr: 0.06 &nbsp;&nbsp; Re:0.75<br>
+Query: 9 &nbsp;&nbsp; Pr: 0.12 &nbsp;&nbsp; Re:0.75<br>
+Query: 10 &nbsp;&nbsp; Pr: 0.08 &nbsp;&nbsp; Re:0.16666666666666666<br>
 #### Avg precision: 0.10200000000000001
 #### Avg recall: 0.4346198830409357
 ----------------------------------------------------------------
-Top 100 documents in rank list
-Query: 1 Pr: 0.0 Re:0.0
-Query: 2 Pr: 0.09 Re:0.6
-Query: 3 Pr: 0.09 Re:0.6
-Query: 4 Pr: 0.06 Re:0.3333333333333333
-Query: 5 Pr: 0.13 Re:0.6842105263157895
-Query: 6 Pr: 0.09 Re:0.5
-Query: 7 Pr: 0.09 Re:1.0
-Query: 8 Pr: 0.03 Re:0.75
-Query: 9 Pr: 0.06 Re:0.75
-Query: 10 Pr: 0.04 Re:0.16666666666666666
+#### Top 100 documents in rank list
+Query: 1 &nbsp;&nbsp; Pr: 0.0 &nbsp;&nbsp; Re:0.0<br>
+Query: 2 &nbsp;&nbsp; Pr: 0.09 &nbsp;&nbsp; Re:0.6<br>
+Query: 3 &nbsp;&nbsp; Pr: 0.09 &nbsp;&nbsp; Re:0.6<br>
+Query: 4 &nbsp;&nbsp; Pr: 0.06 &nbsp;&nbsp; Re:0.3333333333333333<br>
+Query: 5 &nbsp;&nbsp; Pr: 0.13 &nbsp;&nbsp; Re:0.6842105263157895<br>
+Query: 6 &nbsp;&nbsp; Pr: 0.09 &nbsp;&nbsp; Re:0.5<br>
+Query: 7 &nbsp;&nbsp; Pr: 0.09 &nbsp;&nbsp; Re:1.0<br>
+Query: 8 &nbsp;&nbsp; Pr: 0.03 &nbsp;&nbsp; Re:0.75<br>
+Query: 9 &nbsp;&nbsp; Pr: 0.06 &nbsp;&nbsp; Re:0.75<br>
+Query: 10 &nbsp;&nbsp; Pr: 0.04 &nbsp;&nbsp; Re:0.16666666666666666<br>
 #### Avg precision: 0.068
 #### Avg recall: 0.5384210526315789
 ----------------------------------------------------------------
-Top 500 documents in rank list
-Query: 1 Pr: 0.002 Re:1.0
-Query: 2 Pr: 0.03 Re:1.0
-Query: 3 Pr: 0.03 Re:1.0
-Query: 4 Pr: 0.032 Re:0.8888888888888888
-Query: 5 Pr: 0.038 Re:1.0
-Query: 6 Pr: 0.036 Re:1.0
-Query: 7 Pr: 0.018 Re:1.0
-Query: 8 Pr: 0.008 Re:1.0
-Query: 9 Pr: 0.016 Re:1.0
-Query: 10 Pr: 0.026 Re:0.5416666666666666
+#### Top 500 documents in rank list
+Query: 1 &nbsp;&nbsp; Pr: 0.002 &nbsp;&nbsp; Re:1.0<br>
+Query: 2 &nbsp;&nbsp; Pr: 0.03 &nbsp;&nbsp; Re:1.0<br>
+Query: 3 &nbsp;&nbsp; Pr: 0.03 &nbsp;&nbsp; Re:1.0<br>
+Query: 4 &nbsp;&nbsp; Pr: 0.032 &nbsp;&nbsp; Re:0.8888888888888888<br>
+Query: 5 &nbsp;&nbsp; Pr: 0.038 &nbsp;&nbsp; Re:1.0<br>
+Query: 6 &nbsp;&nbsp; Pr: 0.036 &nbsp;&nbsp; Re:1.0<br>
+Query: 7 &nbsp;&nbsp; Pr: 0.018 &nbsp;&nbsp; Re:1.0<br>
+Query: 8 &nbsp;&nbsp; Pr: 0.008 &nbsp;&nbsp; Re:1.0<br>
+Query: 9 &nbsp;&nbsp; Pr: 0.016 &nbsp;&nbsp; Re:1.0<br>
+Query: 10 &nbsp;&nbsp; Pr: 0.026 &nbsp;&nbsp; Re:0.5416666666666666<br>
 #### Avg precision: 0.0236
 #### Avg recall: 0.9430555555555555
 
